@@ -1,12 +1,12 @@
-@mixin fonts($size: false, $colour: false, $weight: false,  $lh: false, $td: false) {
-    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+@mixin fonts($ff:false, $size: false, $colour: false, $weight: false,  $lh: false, $td: false) {
+    @if $ff {font-family: $ff;}
     @if $size { font-size: $size; }
     @if $colour { color: $colour; }
     @if $weight { font-weight: $weight; }
-    @if $lh { line-height: $lh; }
+    @if $lh { line-height: $lh; }    
     @if $td { text-decoration: $td; }    
 }
 
 a {
-    @include fonts ($td:none);
+    @include fonts ($td:none, $ff:Arial);
 }
